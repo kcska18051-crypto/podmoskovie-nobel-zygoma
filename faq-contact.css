@@ -1,0 +1,74 @@
+.implant-faq, .final-contact { padding: 0 0 90px; scroll-margin-top: 32px; }
+.implant-faq__inner, .final-contact__inner { width: min(calc(100% - 64px), var(--shell)); margin-inline: auto; }
+.implant-faq__inner { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1fr); gap: 70px; }
+.implant-faq h2 { margin: 0; font: 700 34px/1.2 Arial, sans-serif; color: var(--text); }
+.implant-faq__items { display: grid; gap: 22px; min-width: 0; }
+.implant-faq details { background: #f3f3f3; border-radius: 13px; }
+.implant-faq summary { display: grid; grid-template-columns: 38px minmax(0,1fr) 24px; align-items: center; gap: 14px; padding: 23px 25px; list-style: none; cursor: pointer; font: 700 23px/1.25 Arial, sans-serif; }
+.implant-faq summary::-webkit-details-marker { display: none; }
+.implant-faq__number { color: var(--brand); font-size: 32px; }
+.implant-faq__toggle { width: 24px; height: 24px; border-radius: 50%; background: var(--brand); position: relative; }
+.implant-faq__toggle::before, .implant-faq__toggle::after { content: ''; position: absolute; background: var(--brand); width: 26px; height: 4px; top: 10px; left: -1px; border-radius: 2px; opacity: 0; }
+.implant-faq__toggle::before { transform: rotate(45deg); }
+.implant-faq__toggle::after { transform: rotate(-45deg); }
+.implant-faq details[open] .implant-faq__toggle { background: transparent; }
+.implant-faq details[open] .implant-faq__toggle::before, .implant-faq details[open] .implant-faq__toggle::after { opacity: 1; }
+.implant-faq__answer { padding: 0 25px 25px 77px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.implant-faq__answer p { margin: 0 0 14px; }
+.implant-faq__answer p:last-child { margin-bottom: 0; }
+.implant-faq__answer ul { padding-left: 20px; margin: 12px 0 18px; }
+.implant-faq__answer li + li { margin-top: 8px; }
+.final-contact__inner { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1fr); gap: 60px; background: #e4f7fa; border-radius: 22px; padding: 54px 40px; }
+.final-contact h2 { color: #009eae; font: 700 42px/1.15 Arial,sans-serif; margin: 0 0 14px; }
+.final-contact__copy > p { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0; }
+.final-contact__doctor { margin-top: 32px; font-size: 15px; line-height: 1.55; }
+.final-contact__doctor > span { display: block; color: var(--muted); margin-bottom: 5px; }
+.final-contact__doctor > a { font-family: Arial,sans-serif; font-size: 22px; font-weight: 700; color: #059aa8; text-decoration: underline; text-underline-offset: 4px; }
+.final-contact__doctor p { margin: 8px 0 0; color: var(--muted); }
+.final-contact__form { min-width: 0; display: grid; gap: 20px; align-content: start; }
+.final-contact__doctor-note { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.final-contact__doctor-note[hidden] { display: none; }
+.final-contact__doctor-note a { color: #059aa8; text-decoration: underline; text-underline-offset: 3px; }
+.field-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.final-contact__field { min-width: 0; }
+.final-contact__field input, .final-contact__field select { width: 100%; min-width: 0; min-height: 52px; border: 1px solid #25b8c4; border-radius: 4px; background: transparent; padding: 12px 15px; font: 500 16px/1.4 Montserrat,Arial,sans-serif; color: #168e9b; }
+.final-contact__field input::placeholder { color: #25aeba; opacity: 1; }
+.final-contact__field option { background: #fff; color: var(--text); }
+.implant-select { display: block; position: relative; }
+.implant-select__display { display: flex; align-items: center; min-height: 52px; width: 100%; border: 1px solid #25b8c4; border-radius: 4px; padding: 12px 48px 12px 15px; font: 500 16px/1.4 Montserrat,Arial,sans-serif; color: #168e9b; white-space: normal; overflow-wrap: anywhere; pointer-events: none; }
+.implant-select::after { content: ''; position: absolute; right: 18px; top: 50%; width: 9px; height: 9px; border-right: 2px solid #168e9b; border-bottom: 2px solid #168e9b; transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+.final-contact__field.implant-select select { position: absolute; inset: 0; height: 100%; opacity: 0; cursor: pointer; z-index: 1; }
+.implant-select:has(select:focus-visible) { outline: 2px solid #059aa8; outline-offset: 4px; border-radius: 4px; }
+@media (forced-colors: active) { .final-contact__field.implant-select select { position: static; opacity: 1; } .implant-select__display, .implant-select::after { display: none; } }
+.final-contact__bottom { display: flex; align-items: center; gap: 24px; margin-top: 5px; }
+.final-contact__consents { flex: 1; min-width: 0; display: grid; gap: 14px; }
+.final-contact__consents label { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.final-contact__consents input { flex: 0 0 17px; width: 17px; height: 17px; margin: 1px 0 0; accent-color: var(--brand); }
+.final-contact__consents a { color: #19a6b4; text-decoration: underline; }
+.final-contact button { flex: 0 0 auto; border: 0; background: var(--orange); border-radius: 32px; padding: 17px 32px; color: white; font-size: 18px; font-weight: 600; }
+.final-contact .form-status { margin: 0; font-size: 14px; line-height: 1.5; color: var(--text); }
+.final-contact .form-status:empty { display: none; }
+.implant-faq summary:focus-visible, .final-contact :is(input,select,button,a):focus-visible { outline: 2px solid #059aa8; outline-offset: 4px; }
+@media (max-width: 1100px) {
+  .implant-faq__inner { gap: 36px; grid-template-columns: minmax(0,.6fr) minmax(0,1fr); }
+  .final-contact__inner { gap: 32px; padding: 36px 28px; }
+  .final-contact__bottom { flex-direction: column; align-items: stretch; }
+  .final-contact button { align-self: flex-start; }
+}
+@media (max-width: 760px) {
+  .implant-faq, .final-contact { padding-bottom: 74px; }
+  .implant-faq__inner, .final-contact__inner { width: calc(100% - 40px); grid-template-columns: 1fr; gap: 28px; }
+  .implant-faq h2, .final-contact h2 { font-size: 31px; }
+  .implant-faq__items { gap: 16px; }
+  .implant-faq summary { padding: 19px 16px; grid-template-columns: 28px minmax(0,1fr) 22px; gap: 10px; font-size: 19px; }
+  .implant-faq__number { font-size: 25px; }
+  .implant-faq__answer { padding: 0 18px 22px; font-size: 15px; }
+  .final-contact__inner { padding: 28px 20px; border-radius: 18px; }
+  .final-contact__copy > p { font-size: 15px; }
+  .final-contact__doctor { margin-top: 22px; font-size: 14px; }
+  .final-contact__doctor > a { font-size: 21px; }
+  .final-contact__field input, .final-contact__field select { font-size: 16px; padding: 12px 10px; }
+  .implant-select__display { padding-left: 10px; }
+  .final-contact__bottom { gap: 22px; }
+  .final-contact button { width: 100%; padding: 16px 20px; }
+}

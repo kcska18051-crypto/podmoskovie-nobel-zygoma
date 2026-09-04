@@ -1,0 +1,42 @@
+/* Existing sedation-page footer, isolated from the landing page styles. */
+.footer { background: #f7f7f7; color: #555; font: 400 14px/1.5 Montserrat, Arial, sans-serif; padding: 25px 0; }
+.footer .wrapper { width: min(calc(100% - 64px), var(--shell)); margin: auto; }
+.footer .row { display: flex; flex-wrap: wrap; margin: 0 -15px 30px; }
+.footer [class^="col-lg-"] { padding: 0 15px; min-width: 0; }
+.footer .col-lg-3 { width: 25%; }
+.footer .col-lg-9 { width: 75%; }
+.footer .col-lg-4 { width: 33.333%; }
+.footer .col-lg-8 { width: 66.667%; }
+.footer .col-lg-6 { width: 50%; }
+.footer p { margin: 0 0 10px; }
+.footer a { color: #0096aa; overflow-wrap: anywhere; }
+.footer a:hover { text-decoration: underline; }
+.footer a:focus-visible { outline: 2px solid #0096aa; outline-offset: 4px; }
+.footer .footer__phone { font-size: 22px; }
+.footer .mt-sm { margin-top: 20px; }
+.footer .mt-lg { margin-top: 30px; }
+.footer .mt-xl { margin-top: 40px; }
+.footer .text-lead { font-size: 18px; }
+.footer__sc { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.footer__sc a { display: inline-flex; }
+.footer__sc img { width: 29px; height: 29px; }
+.footer__sc svg { fill: #0096aa; }
+.footer-feedback { display: inline-block; border: 1px solid #0096aa; padding: 8px 18px; border-radius: 22px; }
+.footer-menu__list { list-style: none; padding: 0; margin: 0; }
+.footer-menu__list-sub { list-style: none; padding-left: 16px; }
+.footer-menu__item { margin-top: 16px; }
+.footer-menu__item:first-child { margin-top: 0; }
+.footer-menu__item-sub { margin-top: 4px; }
+.footer-menu__main-item { margin-bottom: 16px; }
+.footer .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.footer-protivopokazaniya { font: 400 24px/1.4 Arial,sans-serif; color: #999; text-align: center; margin-top: 24px; }
+@media (max-width: 991px) {
+  .footer [class^="col-lg-"] { width: 100%; }
+  .footer .row { margin-bottom: 0; }
+  .footer .col-lg-9 { margin-top: 30px; }
+  .footer .col-lg-8, .footer .col-lg-6 + .col-lg-6 { margin-top: 24px; }
+}
+@media (max-width: 760px) {
+  .footer .wrapper { width: calc(100% - 40px); }
+  .footer-protivopokazaniya { font-size: 18px; }
+}

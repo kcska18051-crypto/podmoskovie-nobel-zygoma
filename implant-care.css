@@ -1,0 +1,20 @@
+.implant-care { padding: 0 0 90px; background: #fff; scroll-margin-top: 32px; }
+.implant-care__inner { width: min(calc(100% - 64px), var(--shell)); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.implant-care h2 { margin: 0 0 32px; font-family: Arial, sans-serif; font-size: 44px; line-height: 1.16; color: var(--text); }
+.implant-care p { margin: 0 0 22px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.implant-care p:last-child { margin-bottom: 0; }
+.implant-care strong { color: var(--text); font-weight: 600; }
+.implant-care__visual { margin: 0; min-width: 0; }
+.implant-care__visual img { display: block; width: 100%; height: auto; border-radius: 16px; }
+@media (max-width: 1000px) {
+  .implant-care__inner { gap: 32px; }
+  .implant-care h2 { font-size: 36px; }
+  .implant-care p { font-size: 16px; }
+}
+@media (max-width: 760px) {
+  .implant-care { padding-bottom: 74px; }
+  .implant-care__inner { width: calc(100% - 40px); grid-template-columns: 1fr; gap: 28px; }
+  .implant-care h2 { font-size: clamp(31px, 9vw, 40px); line-height: 1.12; margin-bottom: 26px; }
+  .implant-care p { font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+  .implant-care__visual img { border-radius: 12px; }
+}
