@@ -19,7 +19,7 @@
   window.addEventListener('resize', schedule);
   window.addEventListener('pageshow', schedule);
   new ResizeObserver(schedule).observe(document.body);
-  strip.querySelector('a').addEventListener('click', event => {
+  strip.querySelector('.booking-strip__button').addEventListener('click', event => {
     event.preventDefault();
     form.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
     form.querySelector('input[name="name"]')?.focus({ preventScroll: true });

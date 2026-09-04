@@ -14,10 +14,10 @@
   <link rel="stylesheet" href="implant-care.css?v=1">
   <link rel="stylesheet" href="reviews.css?v=2">
   <link rel="stylesheet" href="faq-contact.css?v=4">
-  <link rel="stylesheet" href="booking-strip.css?v=3">
+  <link rel="stylesheet" href="booking-strip.css?v=4-local">
   <link rel="stylesheet" href="footer.css?v=1">
   <script src="script.js?v=responsive-select" defer></script>
-  <script src="booking-strip.js?v=1" defer></script>
+  <script src="booking-strip.js?v=2-local" defer></script>
 </head>
 <body>
   <!-- Visible header shell and labels are taken from the sedation-page GitHub repository. -->
@@ -820,8 +820,14 @@
     </footer>
   <aside class="booking-strip" aria-label="Запись на консультацию" aria-hidden="true" inert>
     <div class="booking-strip__inner">
-      <span class="booking-strip__label">Обсудите свой случай с&nbsp;имплантологом</span>
-      <a class="booking-strip__button" href="#appointment"><span class="booking-strip__desktop">Записаться</span><span class="booking-strip__mobile">Записаться к&nbsp;имплантологу</span></a>
+      <div class="booking-strip__copy">
+        <span class="booking-strip__label booking-strip__desktop">Обсудите свой случай с&nbsp;имплантологом</span>
+        <span class="booking-strip__subtitle booking-strip__desktop">Рассмотрим варианты восстановления даже в&nbsp;сложной ситуации</span>
+        <span class="booking-strip__label booking-strip__mobile">Консультация<br>имплантолога</span>
+      </div>
+      <span class="booking-strip__proof">Сертифицированный центр<br>Nobel Biocare</span>
+      <a class="booking-strip__phone" href="tel:+74852608218">+7 (4852) 60-82-18</a>
+      <a class="booking-strip__button" href="#appointment">Записаться</a>
     </div>
   </aside>
 </body>
