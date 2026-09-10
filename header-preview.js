@@ -20,7 +20,7 @@
       : pathOf(document.querySelector('[data-pm-current-path]')?.dataset.pmCurrentPath || location.href);
   }
   function reveal(group, updateAnchor = true) {
-    groups.forEach(other => { other.open = other === group; });
+    groups.forEach(other => { other.open = other === group && !group.classList.contains('pm-service-leaf'); });
     if (updateAnchor) history.replaceState(history.state, '', `${location.pathname}${location.search}#${group.id}`);
     requestAnimationFrame(() => {
       scrollArea.scrollTo({top: scrollArea.scrollTop + group.getBoundingClientRect().top - scrollArea.getBoundingClientRect().top - 8, behavior: 'instant'});
@@ -33,6 +33,9 @@
       const category = pathOf(group.querySelector('.pm-direction').href);
       const belongs = current === category || current.startsWith(category + '/');
       group.classList.toggle('pm-current-category', belongs);
+      const categoryLink = group.querySelector('.pm-mobile-category-link');
+      if (current === category) categoryLink.setAttribute('aria-current', 'page');
+      else categoryLink.removeAttribute('aria-current');
       if (belongs) selected = group;
       group.querySelectorAll('.pm-service-links > a').forEach(link => {
         const exact = pathOf(link.href) === current;
@@ -45,6 +48,8 @@
   groups.forEach(group => {
     const summary = group.querySelector('summary');
     const destination = group.querySelector('.pm-direction').href;
+    const hasChildren = !!group.querySelector('.pm-service-links > a:not(.pm-direction)');
+    group.classList.toggle('pm-service-leaf', !hasChildren);
     group.id = `pm-service-${new URL(destination).pathname.split('/')[2]}`;
     const link = document.createElement('a');
     link.className = 'pm-mobile-category-link';
@@ -52,14 +57,16 @@
     link.href = `#${group.id}`;
     summary.append(link);
     const syncLink = () => {
-      link.href = group.open ? destination : `#${group.id}`;
-      link.setAttribute('aria-expanded', String(group.open));
-      link.setAttribute('aria-controls', `${group.id}-links`);
+      link.href = !hasChildren || group.open ? destination : `#${group.id}`;
+      if (hasChildren) {
+        link.setAttribute('aria-expanded', String(group.open));
+        link.setAttribute('aria-controls', `${group.id}-links`);
+      }
     };
     group.querySelector('.pm-service-links').id = `${group.id}-links`;
     link.addEventListener('click', event => {
       if (!mobile.matches || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      if (!group.open) {
+      if (hasChildren && !group.open) {
         event.preventDefault();
         reveal(group);
         syncLink();
@@ -70,35 +77,7 @@
     group.addEventListener('toggle', syncLink);
     syncLink();
   });
-  const currentGroup = markCurrent();
-  const anchorTargets = [...document.querySelectorAll('[data-pm-page-anchor]')];
-  if (currentGroup && anchorTargets.length) {
-    const shortcuts = document.createElement('nav');
-    shortcuts.className = 'pm-page-shortcuts';
-    shortcuts.setAttribute('aria-label', 'На этой странице');
-    const label = document.createElement('p');
-    label.textContent = 'На этой странице';
-    shortcuts.append(label);
-    anchorTargets.forEach(target => {
-      const link = document.createElement('a');
-      link.href = `#${target.id}`;
-      link.textContent = target.dataset.pmPageAnchor;
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        pageHash = link.hash;
-        returnFocus = null;
-        panel.close();
-        history.replaceState(history.state, '', `${location.pathname}${location.search}${pageHash}`);
-        requestAnimationFrame(() => {
-          target.scrollIntoView({behavior: 'instant', block: 'start'});
-          const heading = target.querySelector('h2');
-          if (heading) { heading.tabIndex = -1; heading.focus({preventScroll: true}); }
-        });
-      });
-      shortcuts.append(link);
-    });
-    currentGroup.querySelector('.pm-service-links').append(shortcuts);
-  }
+  markCurrent();
 
   function view(name) {
     const isServices = name === 'services';

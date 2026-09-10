@@ -34,7 +34,7 @@
 .pm-panel-body { overflow: auto; overscroll-behavior: contain; padding: 12px 30px 30px; }
 .pm-service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; align-items: start; }
 .pm-service-group { border-bottom: 1px solid #e6eeee; }
-.pm-mobile-category-link, .pm-page-shortcuts { display: none; }
+.pm-mobile-category-link { display: none; }
 .pm-category-icon { display: block; width: 32px; height: 32px; object-fit: contain; flex: 0 0 32px; }
 .pm-service-group summary > span { flex: 1; }
 .pm-service-group summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; list-style: none; cursor: pointer; font-size: 14px; font-weight: 600; line-height: 1.5; }
@@ -89,10 +89,6 @@ body.pm-navigation-open { overflow: hidden; }
   .pm-current-category .pm-mobile-category-link > span::after { content: 'Текущий раздел'; display: block; margin-top: 4px; font-size: 11px; font-weight: 400; }
   .pm-service-links > a[aria-current="page"] { padding: 12px; border-radius: 8px; background: #d9f0f0; color: #087681; font-weight: 600; }
   .pm-service-links > a[aria-current="page"]::after { content: 'Вы здесь'; display: block; margin-top: 3px; font-size: 11px; font-weight: 400; }
-  .pm-page-shortcuts { display: grid; border-top: 1px solid #d6eaea; margin-top: 12px; padding: 12px 4px 0; }
-  .pm-page-shortcuts p { margin: 0 0 4px; font-size: 12px; color: #617577; }
-  .pm-page-shortcuts a { color: #087e88; }
-  .pm-page-shortcuts a::after { content: ' ↓'; }
   .pm-service-group[open] { margin: 0 -12px; padding: 0 12px; border-radius: 12px; background: #f0f9f9; border-bottom-color: transparent; }
   .pm-service-links a { font-size: 14px; padding: 12px 4px; min-height: 44px; }
   .pm-service-group[open] summary { padding-bottom: 8px; }
@@ -101,3 +97,8 @@ body.pm-navigation-open { overflow: hidden; }
 }
 @media (min-width: 761px) { .pm-service-all-mobile { display: none; } }
 @media (max-width: 360px) { .pm-logo img { width: 168px; } .pm-mobile-actions { gap: 0; } .pm-top { gap: 6px; } }
+
+@media (max-width: 760px) {
+  .pm-service-leaf .pm-mobile-category-link::after { content: '↗'; }
+  .pm-service-leaf .pm-service-links { display: none; }
+}
