@@ -50,6 +50,10 @@
 .pm-menu-footer { padding-top: 30px; display: grid; gap: 16px; }
 .pm-menu-footer p { margin: 0; font-size: 13px; line-height: 1.7; color: #738083; }
 .pm-menu-footer .pm-book { width: fit-content; }
+.pm-menu-socials { display: flex; align-items: center; gap: 14px; margin-top: 2px; }
+.pm-menu-socials a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; color: #25b8c4; }
+.pm-menu-socials a:hover { background: #eaf8f8; }
+.pm-menu-socials img, .pm-menu-socials svg { display: block; width: 30px; height: 30px; object-fit: contain; }
 .pm-header a:focus-visible, .pm-header button:focus-visible, .pm-navigation a:focus-visible, .pm-navigation button:focus-visible, .pm-navigation summary:focus-visible { outline: 2px solid #0d8793; outline-offset: 4px; }
 .pm-navigation [hidden] { display: none !important; }
 body.pm-navigation-open { overflow: hidden; }
