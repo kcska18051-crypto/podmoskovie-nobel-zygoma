@@ -34,6 +34,8 @@
 .pm-panel-body { overflow: auto; overscroll-behavior: contain; padding: 12px 30px 30px; }
 .pm-service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; align-items: start; }
 .pm-service-group { border-bottom: 1px solid #e6eeee; }
+.pm-category-icon { display: block; width: 32px; height: 32px; object-fit: contain; flex: 0 0 32px; }
+.pm-service-group summary > span { flex: 1; }
 .pm-service-group summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; list-style: none; cursor: pointer; font-size: 14px; font-weight: 600; line-height: 1.5; }
 .pm-service-group summary::-webkit-details-marker { display: none; }
 .pm-service-group summary::after { content: '+'; color: #168d97; font-size: 22px; font-weight: 400; }
