@@ -87,8 +87,8 @@ body.pm-navigation-open { overflow: hidden; }
   .pm-service-group summary { padding: 0; }
   .pm-mobile-category-link { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 62px; padding: 18px 0; }
   .pm-mobile-category-link > span { flex: 1; }
-  .pm-mobile-category-link::after { content: '⌄'; color: #168d97; font-size: 21px; }
-  .pm-service-group[open] .pm-mobile-category-link::after { content: '↗'; }
+  .pm-mobile-category-link::after { content: ''; width: 18px; height: 18px; flex: 0 0 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23168d97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .pm-service-group[open] .pm-mobile-category-link::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23168d97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 18 18 6M6 6h12v12'/%3E%3C/svg%3E"); }
   .pm-current-category .pm-mobile-category-link { color: #087e88; }
   .pm-current-category .pm-mobile-category-link > span::after { content: 'Текущий раздел'; display: block; margin-top: 4px; font-size: 11px; font-weight: 400; }
   .pm-service-links > a[aria-current="page"] { padding: 12px; border-radius: 8px; background: #d9f0f0; color: #087681; font-weight: 600; }
@@ -103,6 +103,8 @@ body.pm-navigation-open { overflow: hidden; }
 @media (max-width: 360px) { .pm-logo img { width: 168px; } .pm-mobile-actions { gap: 0; } .pm-top { gap: 6px; } }
 
 @media (max-width: 760px) {
-  .pm-service-leaf .pm-mobile-category-link::after { content: '↗'; }
+  .pm-service-leaf .pm-mobile-category-link::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23168d97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 18 18 6M6 6h12v12'/%3E%3C/svg%3E"); }
   .pm-service-leaf .pm-service-links { display: none; }
 }
+
+.pm-link-arrow { display: inline-block; width: 14px; height: 14px; flex-shrink: 0; vertical-align: -2px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23168d97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 18 18 6M6 6h12v12'/%3E%3C/svg%3E") center / contain no-repeat; }
