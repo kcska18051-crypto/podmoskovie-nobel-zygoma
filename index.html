@@ -19,39 +19,57 @@
   <link rel="stylesheet" href="footer.css?v=1">
   <script src="script.js?v=responsive-select" defer></script>
   <script src="booking-strip.js?v=2-local" defer></script>
+  <link rel="stylesheet" href="header-preview.css?v=1">
+  <script src="header-preview.js?v=1" defer></script>
 </head>
 <body>
-  <!-- Visible header shell and labels are taken from the sedation-page GitHub repository. -->
-  <header class="header header--over" itemscope itemtype="https://schema.org/WPHeader">
-    <div class="header__wrapper">
-      <div class="header__logo1">
-        <a href="https://www.mc-podmoskovie.ru/" class="no-border" aria-label="Подмосковье — центр стоматологии">
-          <img src="assets/header-logo.svg" width="260" height="39" alt="Подмосковье — центр стоматологии">
-        </a>
+  <header class="pm-header" itemscope itemtype="https://schema.org/WPHeader">
+    <div class="pm-shell">
+      <div class="pm-top">
+        <a class="pm-logo" href="https://www.mc-podmoskovie.ru/" aria-label="Подмосковье — центр стоматологии"><img src="assets/header-logo.svg" width="260" height="39" alt="Подмосковье — центр стоматологии"></a>
+        <a class="pm-address" href="https://www.mc-podmoskovie.ru/contacts/"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ярославль, ул. Некрасова, 41<small>Как добраться до клиники</small></span></a>
+        <div class="pm-contact"><a class="pm-phone" href="tel:+74852608218">+7 (4852) 60-82-18</a><a class="pm-feedback" href="https://www.mc-podmoskovie.ru/contacts/">Обратная связь</a></div>
+        <button class="pm-book" type="button" data-pm-book>Записаться на приём</button>
+        <div class="pm-mobile-actions"><a class="pm-icon-button" href="tel:+74852608218" aria-label="Позвонить в клинику"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></svg></a><button class="pm-icon-button" type="button" data-pm-open="menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="pm-navigation" aria-label="Открыть меню"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
       </div>
-      <div class="header__menu">
-        <nav class="header-v" aria-label="Основная навигация">
-          <ul class="header-menu__wrapper">
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/doctors/">Врачи</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/services/">Услуги</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/patients/">Пациентам</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/otzyvy/">Отзывы</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/about/">О клинике</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/contacts/">Контакты</a></li>
-            <li class="header-menu__item"><a href="https://www.mc-podmoskovie.ru/useful/">Полезное</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header__contacts">
-        <button class="header__mobile-button" type="button">Записаться</button>
-        <div class="header__desktop-contacts">
-          <button class="header__consultation" type="button"><b>Запись на консультацию</b></button>
-          <a class="header__phone" href="tel:+74852608218"><b>+7 (4852) 60-82-18</b></a>
-          <button class="header__feedback" type="button">Обратная связь</button>
-        </div>
-      </div>
+      <nav class="pm-nav" aria-label="Основная навигация"><button class="pm-services-toggle" type="button" data-pm-open="services" aria-haspopup="dialog" aria-expanded="false" aria-controls="pm-navigation"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Услуги<svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><a href="https://www.mc-podmoskovie.ru/doctors/">Врачи</a>
+<a href="https://www.mc-podmoskovie.ru/patients/">Пациентам</a>
+<a href="https://www.mc-podmoskovie.ru/otzyvy/">Отзывы</a>
+<a href="https://www.mc-podmoskovie.ru/about/">О клинике</a>
+<a href="https://www.mc-podmoskovie.ru/contacts/">Контакты</a>
+<a href="https://www.mc-podmoskovie.ru/useful/">Полезное</a></nav>
+      <div class="pm-mobile-quick"><button class="pm-services-toggle" type="button" data-pm-open="services" aria-haspopup="dialog" aria-expanded="false" aria-controls="pm-navigation"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Услуги<svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button class="pm-book" type="button" data-pm-book>Записаться</button></div>
     </div>
   </header>
+  <dialog class="pm-navigation" id="pm-navigation" aria-labelledby="pm-panel-title">
+    <div class="pm-panel-head"><button class="pm-icon-button" type="button" data-pm-back aria-label="Назад в меню" hidden><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12"/></svg></button><h2 id="pm-panel-title">Услуги</h2><a class="pm-all-services" href="https://www.mc-podmoskovie.ru/services/">Все услуги <span aria-hidden="true">↗</span></a><button class="pm-icon-button" type="button" data-pm-close aria-label="Закрыть меню"><svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <div class="pm-panel-body">
+      <div data-pm-menu-view hidden><nav class="pm-menu-links" aria-label="Мобильная навигация"><button type="button" data-pm-open="services">Услуги<svg class="pm-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><a href="https://www.mc-podmoskovie.ru/doctors/">Врачи</a>
+<a href="https://www.mc-podmoskovie.ru/patients/">Пациентам</a>
+<a href="https://www.mc-podmoskovie.ru/otzyvy/">Отзывы</a>
+<a href="https://www.mc-podmoskovie.ru/about/">О клинике</a>
+<a href="https://www.mc-podmoskovie.ru/contacts/">Контакты</a>
+<a href="https://www.mc-podmoskovie.ru/useful/">Полезное</a></nav><div class="pm-menu-footer"><a class="pm-phone" href="tel:+74852608218">+7 (4852) 60-82-18</a><p>Ярославль, ул. Некрасова, 41</p><button class="pm-book" type="button" data-pm-book>Записаться на приём</button></div></div>
+      <div data-pm-services-view><div class="pm-service-grid"><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/diagnostics.svg" width="32" height="32" alt="" aria-hidden="true"><span>Диагностика</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/diagnostics/3d/">Трехмерная (3D) томография</a>
+<a href="https://www.mc-podmoskovie.ru/services/diagnostics/ortopantomogramma/">Ортопантомограмма</a>
+<a href="https://www.mc-podmoskovie.ru/services/diagnostics/roentgen/">Прицельные рентген снимки</a>
+<a href="https://www.mc-podmoskovie.ru/services/diagnostics/telerentgenogramma/">Телерентгенограмма</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/diagnostics/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/therapeutic.svg" width="32" height="32" alt="" aria-hidden="true"><span>Лечение зубов</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/therapeutic/profilakticheskie-osmotry/">Профосмотр</a>
+<a href="https://www.mc-podmoskovie.ru/services/therapeutic/caries/">Лечение кариеса</a>
+<a href="https://www.mc-podmoskovie.ru/services/therapeutic/pulpitis/">Лечение каналов / пульпита</a>
+<a href="https://www.mc-podmoskovie.ru/services/therapeutic/restoration-of-teeth/">Художественная реставрация</a>
+<a href="https://www.mc-podmoskovie.ru/services/therapeutic/spasenie-travmirovannykh-zubov/">Спасение травмированных зубов</a>
+<a href="https://www.mc-podmoskovie.ru/services/therapeutic/lechenie-zubov-pri-grudnom-vskarmlivanii-i-beremennosti/">Лечение зубов при беременности</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/therapeutic/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/implant.svg" width="32" height="32" alt="" aria-hidden="true"><span>Имплантация зубов</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/implant/implant-nobel-biocar/">Имплант-система Нобель</a>
+<a href="https://www.mc-podmoskovie.ru/services/implant/implant-neodent/">Имплант-система Неодент</a>
+<a href="https://www.mc-podmoskovie.ru/services/implant/all-on-4-all-on-6/">All-on-4</a>
+<a href="https://www.mc-podmoskovie.ru/services/implant/sinus-lifting/">Костная пластика</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/implant/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/orthopaedy.svg" width="32" height="32" alt="" aria-hidden="true"><span>Протезирование</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/orthopaedy/koronki/">Коронки</a>
+<a href="https://www.mc-podmoskovie.ru/services/orthopaedy/veneers/">Виниры и вкладки</a>
+<a href="https://www.mc-podmoskovie.ru/services/orthopaedy/clasp/">Бюгельные зубные протезы</a>
+<a href="https://www.mc-podmoskovie.ru/services/orthopaedy/sportivnye-kappy/">Спортивные каппы</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/orthopaedy/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/surgery.svg" width="32" height="32" alt="" aria-hidden="true"><span>Хирургия</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/surgery/udalenie-zubov/">Удаление зубов</a>
+<a href="https://www.mc-podmoskovie.ru/services/surgery/plastika-polosti-rta/">Пластика полости рта</a>
+<a href="https://www.mc-podmoskovie.ru/services/surgery/zubosohranyayuschie_operations/">Зубосохраняющие операции</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/surgery/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/ortodont.svg" width="32" height="32" alt="" aria-hidden="true"><span>Ортодонтия</span></summary><div class="pm-service-links"><a href="https://www.mc-podmoskovie.ru/services/ortodont/bracket/">Брекет-системы</a>
+<a href="https://www.mc-podmoskovie.ru/services/ortodont/rannee-lechenie-prikusa/">Раннее лечение прикуса</a><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/ortodont/">Все услуги направления <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/childrens-dentistry.svg" width="32" height="32" alt="" aria-hidden="true"><span>Детская стоматология</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/childrens-dentistry/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/gigiena-i-profilaktika.svg" width="32" height="32" alt="" aria-hidden="true"><span>Гигиена и профилактика</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/gigiena-i-profilaktika/professionalnaya-gigiena-polosti-rta/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/parodont.svg" width="32" height="32" alt="" aria-hidden="true"><span>Лечение десен</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/parodont/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/krasivaya-ulybka.svg" width="32" height="32" alt="" aria-hidden="true"><span>Красивая улыбка</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/krasivaya-ulybka/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/sedatsiya.svg" width="32" height="32" alt="" aria-hidden="true"><span>Наркоз/Седация</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/sedatsiya/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details><details class="pm-service-group"><summary><img class="pm-category-icon" src="assets/service-icons/whitening.svg" width="32" height="32" alt="" aria-hidden="true"><span>Отбеливание</span></summary><div class="pm-service-links"><a class="pm-direction" href="https://www.mc-podmoskovie.ru/services/whitening/">Подробнее об услуге <span aria-hidden="true">↗</span></a></div></details></div><a class="pm-service-all-mobile" href="https://www.mc-podmoskovie.ru/services/">Все услуги клиники <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </dialog>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
